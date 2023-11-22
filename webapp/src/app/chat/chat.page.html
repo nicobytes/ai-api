@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat Llama</ion-title>
+    @if (showLoading()) {
+      <ion-progress-bar type="indeterminate" />
+    }
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if (messages().length === 0) {
+  <ion-note>No messages yet</ion-note>
+  } @else {
+  <ion-list>
+    @for (message of messages(); track message) {
+    <ion-item>
+      <ion-text>{{message}}</ion-text>
+    </ion-item>
+    }
+  </ion-list>
+  }
+</ion-content>
+
+<ion-footer class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-input
+          (keydown.enter)="sendMessage()"
+          [formControl]="textareaCtrl"
+          placeholder="Say hello" />
+      </ion-col>
+      <ion-col size="1">
+        <ion-button expand="block" (click)="sendMessage()">
+          <ion-icon slot="icon-only" name="send"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
