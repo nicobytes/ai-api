@@ -7,13 +7,15 @@ import { ChatCloudflareWorkersAI } from "langchain/chat_models/cloudflare_worker
 type Params = {
   cloudflareAccountId: string;
   cloudflareApiToken: string;
+  baseUrl: string;
 };
 
-export const buildLlamaChain = async ({ cloudflareAccountId, cloudflareApiToken }: Params) => {
+export const buildLlamaChain = async ({ cloudflareAccountId, cloudflareApiToken, baseUrl }: Params) => {
   const model = new ChatCloudflareWorkersAI({
     model: "@cf/meta/llama-2-7b-chat-int8",
     cloudflareAccountId,
     cloudflareApiToken,
+    baseUrl
   });
 
   const prompt = ChatPromptTemplate.fromMessages([

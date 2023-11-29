@@ -4,7 +4,7 @@ import chat from './api/chat'
 
 const app = new Hono()
 app.use('/*', cors())
-app.get('/', (c) => c.text('Hello Hono!'))
+app.get('/', (c) => c.text('Hello!'))
 app.route('/chat', chat)
 
 export default app
