@@ -13,6 +13,9 @@
     "langchain": "0.0.198"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.5",
     "@cloudflare/workers-types": "4.20231121.0",
     "@types/jest": "29.5.10",
     "esbuild": "0.19.8",
