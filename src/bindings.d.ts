@@ -4,4 +4,5 @@ export type Bindings = {
   CLOUDFLARE_API_TOKEN: string;
   AI_GATEWAY_URL: string;
   AI: any;
+  VECTORIZE_INDEX: VectorizeIndex;
 }
