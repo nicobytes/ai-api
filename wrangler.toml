@@ -1,13 +1,13 @@
 name = "ai_services"
 compatibility_date = "2023-01-01"
-
-[vars]
-OPENAI_API_KEY = ""
-CLOUDFLARE_ACCOUNT_ID = ""
-CLOUDFLARE_API_TOKEN = ""
+node_compat = true
 
 [ai]
 binding = "AI"
+
+[[vectorize]]
+binding = "VECTORIZE_INDEX"
+index_name = "movies_index"
 
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"

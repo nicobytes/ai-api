@@ -1,8 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "dev:remote": "wrangler dev src/index.ts --remote",
+    "dev": "wrangler dev src/index.ts --remote",
     "deploy": "wrangler deploy --minify src/index.ts",
     "test": "vitest run",
     "test:coverage": "vitest run  --coverage"
