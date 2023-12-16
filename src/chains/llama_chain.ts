@@ -15,7 +15,7 @@ export const buildLlamaChain = async ({ cloudflareAccountId, cloudflareApiToken,
     model: "@cf/meta/llama-2-7b-chat-int8",
     cloudflareAccountId,
     cloudflareApiToken,
-    baseUrl
+    // baseUrl
   });
 
   const prompt = ChatPromptTemplate.fromMessages([
