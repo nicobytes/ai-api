@@ -2,7 +2,7 @@ node_modules
 dist
 .wrangler
 .dev.vars
-.ndjson
+*.ndjson
 
 # Change them to your taste:
 package-lock.json

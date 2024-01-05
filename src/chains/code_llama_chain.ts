@@ -44,7 +44,7 @@ export const buildCodeLlamaChain = async ({ cloudflareAccountId, cloudflareApiTo
   ]);
 };
 
-const systemPrompt = `Tú eres un asistente de python`;
+const systemPrompt = `Tu eres un bot experto en Angular`;
 
 const buildPrompt = () => {
   const prompt = ChatPromptTemplate.fromMessages([

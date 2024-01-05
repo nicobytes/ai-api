@@ -15,4 +15,5 @@ export const generateImage = async (params: Params) => {
   const model = "@cf/stabilityai/stable-diffusion-xl-base-1.0";
   const response = await ai.run(model, inputs);
   return response;
+
 };

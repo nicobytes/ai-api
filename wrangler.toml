@@ -1,4 +1,4 @@
-name = "ai_services"
+name = "ai-api"
 compatibility_date = "2023-01-01"
 node_compat = true
 
