@@ -5,4 +5,8 @@ export type Bindings = {
   AI_GATEWAY_URL: string;
   AI: any;
   VECTORIZE_INDEX: VectorizeIndex;
+  PALM_API_KEY: string;
+  JWT_SECRET: string;
+  AUTH_EMAIL: string;
+  AUTH_PASSWORD: string;
 }
