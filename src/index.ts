@@ -7,6 +7,7 @@ import chatApp from "./apps/chat";
 import imageApp from "./apps/image";
 import searchApp from "./apps/search";
 import authApp from "./apps/auth";
+import transcribeApp from "./apps/transcribe";
 import { Bindings } from "@src/bindings";
 
 const app = new OpenAPIHono<{Bindings: Bindings}>();
@@ -20,13 +21,15 @@ app.get("/", (c) => c.text("Hello!"));
 app.route("/auth", authApp);
 
 app.use('/api/*', async (c, next) => {
-  const secret = c.env.JWT_SECRET;
-  const auth = jwt({ secret });
-  return auth(c, next);
+  const jwtMiddleware = jwt({
+    secret: c.env.JWT_SECRET,
+  });
+  return jwtMiddleware(c, next);
 });
 app.route("/api/v1/chat", chatApp);
 app.route("/api/v1/image", imageApp);
 app.route("/api/v1/search", searchApp);
+app.route("/api/v1/transcribe", transcribeApp);
 
 app.get("/ui", swaggerUI({ url: "/docs" }));
 app.doc("/docs", {

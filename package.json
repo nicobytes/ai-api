@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "@cloudflare/ai": "1.0.36",
-    "@hono/swagger-ui": "0.2.0",
-    "@hono/zod-openapi": "0.9.0",
-    "hono": "3.10.3",
+    "@hono/swagger-ui": "0.2.1",
+    "@hono/zod-openapi": "0.9.5",
+    "hono": "3.12.0",
     "langchain": "0.0.198"
   },
   "devDependencies": {
