@@ -17,6 +17,10 @@ const ResponseSchema = z.object({
   transcribe: z.string(),
 });
 
+const ErrorSchema = z.object({
+  error: z.any(),
+});
+
 const route = createRoute({
   method: "post",
   path: "/whisper",
@@ -35,6 +39,14 @@ const route = createRoute({
       content: {
         "application/json": {
           schema: ResponseSchema,
+        },
+      },
+    },
+    500: {
+      description: "Error",
+      content: {
+        "application/json": {
+          schema: ErrorSchema,
         },
       },
     },

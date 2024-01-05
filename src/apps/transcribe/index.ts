@@ -8,11 +8,15 @@ const app = new OpenAPIHono<{ Bindings: Bindings }>();
 app.openapi(whisperRoute, async (c) => {
   const requestBody = await c.req.parseBody<z.infer<typeof BodySchema>>();
   const audioFile = requestBody.audio as File;
-  const response = await generateTranscribe({
-    audio: audioFile,
-    AI: c.env.AI,
-  });
-  return c.json({ transcribe: response.text }, 201);
+  try {
+    const response = await generateTranscribe({
+      audio: audioFile,
+      AI: c.env.AI,
+    });
+    return c.json({ transcribe: response.text }, 201);
+  } catch (error) {
+    return c.json({ error }, 500);
+  }
 });
 
 export default app;
