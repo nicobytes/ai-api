@@ -1,7 +1,5 @@
 export type Bindings = {
   OPENAI_API_KEY: string;
-  CLOUDFLARE_ACCOUNT_ID: string;
-  CLOUDFLARE_API_TOKEN: string;
   AI_GATEWAY_URL: string;
   AI: any;
   VECTORIZE_INDEX: VectorizeIndex;
@@ -9,4 +7,9 @@ export type Bindings = {
   JWT_SECRET: string;
   AUTH_EMAIL: string;
   AUTH_PASSWORD: string;
+  CF_ACCOUNT_ID: string;
+  CF_API_TOKEN: string;
+  CF_AI_GATEWAY_ENDPOINT: string;
+  CF_AI_GATEWAY_SLUG: string;
+  CF_AI_GATEWAY_PROVIDER: string;
 }
