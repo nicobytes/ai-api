@@ -18,16 +18,15 @@ app.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404))
 
 app.get("/", (c) => c.text("Hello!"));
 
-// app.route("/auth", authApp);
+app.route("/auth", authApp);
 
-/*
 app.use('/api/*', async (c, next) => {
   const jwtMiddleware = jwt({
     secret: c.env.JWT_SECRET,
   });
   return jwtMiddleware(c, next);
 });
-*/
+
 app.route("/api/v1/chat", chatApp);
 app.route("/api/v1/image", imageApp);
 app.route("/api/v1/search", searchApp);
